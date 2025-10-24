@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="HerramientasV2.FormularioGeneraMetodosJSDeWSControl"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:imaging="clr-namespace:Microsoft.VisualStudio.Imaging;assembly=Microsoft.VisualStudio.Imaging"
+             xmlns:theming="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Imaging"
+             xmlns:util="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Utilities"
+             xmlns:catalog="clr-namespace:Microsoft.VisualStudio.Imaging;assembly=Microsoft.VisualStudio.ImageCatalog"
+             xmlns:toolkit="clr-namespace:Community.VisualStudio.Toolkit;assembly=Community.VisualStudio.Toolkit"
+             toolkit:Themes.UseVsTheme="True"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="900"
+             Name="MyToolWindow">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition  Height="Auto" />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Clases Linq Disponibles en el proyecto"/>
+        <ComboBox Name="LinqDisponibles" Margin="0,5,0,5"  SelectionChanged="LinqDisponibles_SelectionChanged"/>
+
+        <Label  Content="Métodos Asociados a Clase" Grid.Row="1"/>
+        <ListBox x:Name="Metodos" Grid.Row="2" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="150">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox Margin="5,0,0,0" Content="{Binding Content}" IsChecked="{Binding IsChecked, Mode=TwoWay}"/>
+                        <Label Content="" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.Items>
+
+            </ListBox.Items>
+        </ListBox>
+        <StackPanel Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Left">
+            <CheckBox Name="tagScript"  Content="Agregar Tag de script" Margin="0,10,0,10" />
+            <CheckBox Name="CamposEntrada"  Content="Metodo con variables de entrada" Margin="10,10,0,10" Width="216" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="5" HorizontalAlignment="Right">
+            <Button Content="Recargar Clases" Click="Button_Click" Margin="0,10,10,10"/>
+            <Button Content="Generar Nuevos Métodos y Clases de Encapsulamiento" Margin="0,10,0,10" Click="Button_Click_1"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<Extern href="stdidcmd.h" />
+	<Extern href="vsshlids.h" />
+	<Include href="KnownImageIds.vsct" />
+	<Include href="VSGlobals.vsct" />
+
+	<Commands package="HerramientasV2">
+
+
+		<Groups>
+			<!-- Define el grupo en la barra de menús principal -->
+			<Group guid="HerramientasV2" id="MyMenuGroup" priority="0x0600">
+				<Parent guid="VSMainMenu" id="Extensions" />
+			</Group>
+		</Groups>
+		<!--This section defines the elements the user can interact with, like a menu command or a button
+        or combo box in a toolbar. -->
+		<Buttons>
+
+			<Button guid="HerramientasV2" id="ObtieneUltimaCDN" priority="0x0100" type="Button">
+				<Parent guid="HerramientasV2" id="MyMenuGroup" />
+				<Icon guid="ImageCatalogGuid" id="AddAgent" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Obtener última librerias Frontend por CDN</ButtonText>
+					<LocCanonicalName>.View.ObtieneUltimaCDN</LocCanonicalName>
+				</Strings>
+			</Button>
+			<Button guid="HerramientasV2" id="GeneraMetodosEnLinq" priority="0x0100" type="Button">
+				<Parent guid="HerramientasV2" id="MyMenuGroup" />
+				<Icon guid="ImageCatalogGuid" id="AddDataItem" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Genera Metodos en base a clase linq</ButtonText>
+					<LocCanonicalName>.View.GeneraMetodosEnLinq</LocCanonicalName>
+				</Strings>
+			</Button>
+			<Button guid="HerramientasV2" id="GeneraMetodosJSDeWS" priority="0x0100" type="Button">
+				<Parent guid="HerramientasV2" id="MyMenuGroup" />
+				<Icon guid="ImageCatalogGuid" id="AddChildNode" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Genera Metodos JS en base a Servicio Web</ButtonText>
+					<LocCanonicalName>.View.GeneraMetodosJSDeWS</LocCanonicalName>
+				</Strings>
+			</Button>
+			<Button guid="HerramientasV2" id="GeneraFormularioJS" priority="0x0100" type="Button">
+				<Parent guid="HerramientasV2" id="MyMenuGroup" />
+				<Icon guid="ImageCatalogGuid" id="FormTag" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Genera Formularios en base a funcion JS</ButtonText>
+					<LocCanonicalName>.View.GeneraFormularioJS</LocCanonicalName>
+				</Strings>
+			</Button>
+			<Button guid="HerramientasV2" id="GeneraServicioRest" priority="0x0100" type="Button">
+				<Parent guid="HerramientasV2" id="MyMenuGroup" />
+					  <Icon guid="ImageCatalogGuid" id="ASPGenericHandlerFile" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Genera Servicio Rest en base a metodo</ButtonText>
+					<LocCanonicalName>.View.GeneraServicioRest</LocCanonicalName>
+				</Strings>
+			</Button>
+
+		</Buttons>
+
+	</Commands>
+
+	<Symbols>
+		<GuidSymbol name="HerramientasV2" value="{ba821318-aca7-42eb-9cb4-38498c148933}">
+			<IDSymbol name="MyMenuGroup" value="0x0001" />
+			<IDSymbol name="ObtieneUltimaCDN" value="0x0200" />
+			<IDSymbol name="GeneraMetodosEnLinq" value="0x0300" />
+			<IDSymbol name="GeneraMetodosJSDeWS" value="0x0400" />
+			<IDSymbol name="GeneraFormularioJS" value="0x0500" />
+			<IDSymbol name="GeneraServicioRest" value="0x0600" />
+
+		</GuidSymbol>
+
+
+
+
+	</Symbols>
+</CommandTable>

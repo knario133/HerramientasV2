@@ -1,0 +1,280 @@
+﻿<UserControl x:Class="HerramientasV2.FormularioGeneraFormularioJSControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:imaging="clr-namespace:Microsoft.VisualStudio.Imaging;assembly=Microsoft.VisualStudio.Imaging"
+             xmlns:theming="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Imaging"
+             xmlns:util="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Utilities"
+             xmlns:catalog="clr-namespace:Microsoft.VisualStudio.Imaging;assembly=Microsoft.VisualStudio.ImageCatalog"
+             xmlns:toolkit="clr-namespace:Community.VisualStudio.Toolkit;assembly=Community.VisualStudio.Toolkit"
+             toolkit:Themes.UseVsTheme="True"
+             mc:Ignorable="d"
+              d:DesignHeight="600" d:DesignWidth="1150"
+             
+             Name="MyToolWindow" Width="1138" >
+    <Grid HorizontalAlignment="Left" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel  Grid.Row="0"  Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+            <Label Content="Nombre del Formulario:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Width="350"  Name="FormularioTextBox" VerticalAlignment="Center"/>
+        </StackPanel >
+        <StackPanel  Grid.Row="1"  Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10">
+            <!-- Label Columnas -->
+            <Label Content="Columnas:" VerticalAlignment="Center" Margin="5"/>
+
+            <!-- Input para números con valor por defecto 1 -->
+            <TextBox Name="textBox2" Width="50" VerticalAlignment="Center" Text="1" InputScope="Number" Margin="5"/>
+
+            <!-- CheckBox para estilos -->
+            <CheckBox Name="checkBox4" Content="Bordered" VerticalAlignment="Center" Margin="5"/>
+            <CheckBox Name="checkBox5" Content="Striped" VerticalAlignment="Center" Margin="5"/>
+            <CheckBox Name="checkBox6" Content="Hover" VerticalAlignment="Center" Margin="5"/>
+            <CheckBox Name="checkBox7"  Content="Small" VerticalAlignment="Center" Margin="5"/>
+
+            <!-- CheckBox Responsive -->
+            <CheckBox Name="checkBox8"  Content="Responsive" VerticalAlignment="Center" Margin="15"/>
+
+            <!-- ComboBox (Select) -->
+            <ComboBox Name="comboBox3" Width="120" VerticalAlignment="Center" Margin="5">
+                <!-- Aquí puedes agregar los items que necesites en el ComboBox -->
+                <ComboBoxItem Content="sm"/>
+                <ComboBoxItem Content="md"/>
+                <ComboBoxItem Content="lg"/>
+                <ComboBoxItem Content="xl"/>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel  Grid.Row="2"  Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+            <Label Content="Nombre Campo:" VerticalAlignment="Center" Margin="5"/>
+            <TextBox Name="NombreDeCampo" Width="150" VerticalAlignment="Center" Text="" InputScope="Number" Margin="5"/>
+            <Label Content="Tipo" VerticalAlignment="Center" Margin="5"/>
+            <ComboBox Name="TipoDeCampo" Width="120" VerticalAlignment="Center" Margin="5">
+                <!-- Aquí puedes agregar los items que necesites en el ComboBox -->
+                <ComboBoxItem Content="SingleLine"/>
+                <ComboBoxItem Content="MultiLine"/>
+                <ComboBoxItem Content="password"/>
+                <ComboBoxItem Content="file"/>
+                <ComboBoxItem Content="hidden"/>
+                <ComboBoxItem Content="image"/>
+                <ComboBoxItem Content="datetime"/>
+                <ComboBoxItem Content="datetime-local"/>
+                <ComboBoxItem Content="date"/>
+                <ComboBoxItem Content="month"/>
+                <ComboBoxItem Content="time"/>
+                <ComboBoxItem Content="week"/>
+                <ComboBoxItem Content="number"/>
+                <ComboBoxItem Content="money"/>
+                <ComboBoxItem Content="range"/>
+                <ComboBoxItem Content="email"/>
+                <ComboBoxItem Content="url"/>
+                <ComboBoxItem Content="search"/>
+                <ComboBoxItem Content="tel"/>
+                <ComboBoxItem Content="color"/>
+
+            </ComboBox>
+            <CheckBox Content="ReadOnly" VerticalAlignment="Center" Margin="5"/>
+            <Button Content="Agregar Campo" Click="Button_Click"/>
+
+        </StackPanel>
+        <GroupBox  Grid.Row="3" Header="Campos Formulario"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel   Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Width="660">
+
+
+                    <DataGrid Name="dgFormulario" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <!-- Botón Eliminar -->
+                            <DataGridTemplateColumn Header="Eliminar">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="Eliminar" Click="Eliminar_Click"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <!-- Columna ID -->
+                            <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
+
+                            <!-- Columna Nombre del Campo -->
+                            <DataGridTextColumn Header="Nombre del Campo" Binding="{Binding NombreCampo}" />
+
+                            <!-- Columna Tipo de Campo -->
+                            <DataGridTemplateColumn Header="Tipo de Campo">
+                                <DataGridTemplateColumn.CellTemplate  >
+                                    <DataTemplate>
+                                        <ComboBox SelectedValue="{Binding TipoCampo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  SelectedValuePath="Content">
+                                            <ComboBoxItem Content="SingleLine"/>
+                                            <ComboBoxItem Content="MultiLine"/>
+                                            <ComboBoxItem Content="password"/>
+                                            <ComboBoxItem Content="file"/>
+                                            <ComboBoxItem Content="hidden"/>
+                                            <ComboBoxItem Content="image"/>
+                                            <ComboBoxItem Content="datetime"/>
+                                            <ComboBoxItem Content="datetime-local"/>
+                                            <ComboBoxItem Content="date"/>
+                                            <ComboBoxItem Content="month"/>
+                                            <ComboBoxItem Content="time"/>
+                                            <ComboBoxItem Content="week"/>
+                                            <ComboBoxItem Content="number"/>
+                                            <ComboBoxItem Content="money"/>
+                                            <ComboBoxItem Content="range"/>
+                                            <ComboBoxItem Content="email"/>
+                                            <ComboBoxItem Content="url"/>
+                                            <ComboBoxItem Content="search"/>
+                                            <ComboBoxItem Content="tel"/>
+                                            <ComboBoxItem Content="color"/>
+
+                                        </ComboBox>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <!-- CheckBox Requerido -->
+                            <DataGridCheckBoxColumn Header="ReadOnly" Binding="{Binding EsRequerido}" />
+
+                            <!-- ComboBox (Select) al final -->
+                            <DataGridTemplateColumn Header="Campo Asociado">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ComboBox ItemsSource="{Binding OpcionesComboBox}" SelectedItem="{Binding CampoDestino}"></ComboBox>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+
+                </StackPanel >
+            </ScrollViewer>
+        </GroupBox>
+        <StackPanel  Grid.Row="4"  Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+            <Label Content="Nombre Boton:" VerticalAlignment="Center" Margin="5"/>
+            <TextBox  Width="150" Name="NombreNuevoBoton" VerticalAlignment="Center" Text="" InputScope="Number" Margin="5"/>
+            <Label Content="Clase Boton" VerticalAlignment="Center" Margin="5"/>
+            <ComboBox  Width="120" Name="ClaseNuevoBoton" VerticalAlignment="Center" Margin="5">
+                <!-- Aquí puedes agregar los items que necesites en el ComboBox -->
+
+                <ComboBoxItem Content="btn btn-primary" />
+                <ComboBoxItem Content="btn btn-secondary"/>
+                <ComboBoxItem Content="btn btn-success"/>
+                <ComboBoxItem Content="btn btn-danger"/>
+                <ComboBoxItem Content="btn btn-warning"/>
+                <ComboBoxItem Content="btn btn-info"/>
+                <ComboBoxItem Content="btn btn-light"/>
+                <ComboBoxItem Content="btn btn-dark"/>
+                <ComboBoxItem Content="btn btn-link"/>
+                <ComboBoxItem Content="btn btn-outline-primary"/>
+                <ComboBoxItem Content="btn btn-outline-secondary"/>
+                <ComboBoxItem Content="btn btn-outline-success"/>
+                <ComboBoxItem Content="btn btn-outline-danger"/>
+                <ComboBoxItem Content="btn btn-outline-warning"/>
+                <ComboBoxItem Content="btn btn-outline-info"/>
+                <ComboBoxItem Content="btn btn-outline-light"/>
+                <ComboBoxItem Content="btn btn-outline-dark"/>
+
+            </ComboBox>
+            <Label Content="SweetAlert" VerticalAlignment="Center" Margin="5"/>
+            <ComboBox  Width="120" Name="Swall" VerticalAlignment="Center" Margin="5">
+                <!-- Aquí puedes agregar los items que necesites en el ComboBox -->
+
+                <ComboBoxItem Content="No" />
+                <ComboBoxItem Content="Dialogo Confirmación"/>
+                <ComboBoxItem Content="Alerta Post"/>
+            </ComboBox>
+            <CheckBox Name="LlamaAFuncionJS" Content="Llama a Funcion JS" VerticalAlignment="Center" Margin="5"/>
+            <CheckBox Name="LlamaAFuncionJSSeleccionado" Content="Llama a Funcion JS Seleccionada" VerticalAlignment="Center" Margin="5"/>
+            <Button Name="AgregarBotonAFormulario" Content="Agregar Boton"  Click="AgregarBotonAFormulario_Click"/>
+
+        </StackPanel>
+        <GroupBox  Grid.Row="5" Header="Botones Formulario"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <StackPanel   Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,0,0" Width="623">
+
+
+                    <DataGrid Name="BotonesFormulario" AutoGenerateColumns="False" Width="612">
+                        <DataGrid.Columns>
+                            <!-- Botón Eliminar -->
+                            <DataGridTemplateColumn Header="Eliminar">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="Eliminar"  Click="EliminarBoton_Click"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <!-- Columna ID -->
+                            <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
+
+                            <!-- Columna Nombre del Campo -->
+                            <DataGridTextColumn Header="Nombre del Boton" Binding="{Binding NombreCampo}" />
+
+                            <!-- Columna Tipo de Campo -->
+                            <DataGridTemplateColumn Header="Clase boton">
+                                <DataGridTemplateColumn.CellTemplate  >
+                                    <DataTemplate>
+                                        <ComboBox SelectedValue="{Binding TipoCampo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  SelectedValuePath="Content">
+                                            <ComboBoxItem Content="btn btn-primary" />
+                                            <ComboBoxItem Content="btn btn-secondary"/>
+                                            <ComboBoxItem Content="btn btn-success"/>
+                                            <ComboBoxItem Content="btn btn-danger"/>
+                                            <ComboBoxItem Content="btn btn-warning"/>
+                                            <ComboBoxItem Content="btn btn-info"/>
+                                            <ComboBoxItem Content="btn btn-light"/>
+                                            <ComboBoxItem Content="btn btn-dark"/>
+                                            <ComboBoxItem Content="btn btn-link"/>
+                                            <ComboBoxItem Content="btn btn-outline-primary"/>
+                                            <ComboBoxItem Content="btn btn-outline-secondary"/>
+                                            <ComboBoxItem Content="btn btn-outline-success"/>
+                                            <ComboBoxItem Content="btn btn-outline-danger"/>
+                                            <ComboBoxItem Content="btn btn-outline-warning"/>
+                                            <ComboBoxItem Content="btn btn-outline-info"/>
+                                            <ComboBoxItem Content="btn btn-outline-light"/>
+                                            <ComboBoxItem Content="btn btn-outline-dark"/>
+
+                                        </ComboBox>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <!-- Swal (nuevo 2024/03/06)-->
+                            <DataGridTemplateColumn Header="Swall">
+                                <DataGridTemplateColumn.CellTemplate  >
+                                    <DataTemplate>
+                                        <ComboBox SelectedValue="{Binding TipoCampo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  SelectedValuePath="Content">
+                                            <ComboBoxItem Content="No" />
+                                            <ComboBoxItem Content="Dialogo Confirmación"/>
+                                            <ComboBoxItem Content="Alerta Post"/>
+                                        </ComboBox>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <!-- CheckBox Requerido -->
+                            <DataGridCheckBoxColumn Header="Llama a Funcion" Binding="{Binding LlamaJS}" />
+                            <DataGridCheckBoxColumn Header="Llama a Funcion Seleccionada" Binding="{Binding LlamaJSSeleccionado}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel >
+            </ScrollViewer>
+        </GroupBox>
+        <GroupBox  Grid.Row="6" Header="Codigo Generado"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBox Name="textBox5" Width="660"  Height="100" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+            </StackPanel>
+        </GroupBox>
+        <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Generar Código" Margin="5" Click="Button_Click_1" />
+            <Button Content="Generar Solo Código de Boton" Margin="5" Click="Button_Click_3" />
+            <Button Content="Copiar Código" Margin="5" Click="Button_Click_2"/>
+        </StackPanel>
+
+    </Grid>
+
+</UserControl>
