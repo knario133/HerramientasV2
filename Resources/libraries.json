@@ -1,0 +1,161 @@
+[
+  {
+    "name": "chart.js -",
+    "value": "chart.js",
+    "files": [
+      "dist/chart.umd.min.js"
+    ]
+  },
+  {
+    "name": "FontAwesome-Free -",
+    "value": "@fortawesome/fontawesome-free",
+    "files": [
+      "js/all.min.js",
+      "css/fontawesome.min.css"
+    ]
+  },
+  {
+    "name": "Normalize.css -",
+    "value": "normalize.css",
+    "files": [
+      "normalize.min.css"
+    ]
+  },
+  {
+    "name": "Toastr.js -",
+    "value": "toastr",
+    "files": [
+      "toastr.min.js",
+      "toastr.min.css"
+    ]
+  },
+  {
+    "name": "JS jQuery -",
+    "value": "jquery",
+    "files": [
+      "dist/jquery.min.js"
+    ]
+  },
+  {
+    "name": "Boostrap -",
+    "value": "bootstrap",
+    "dependencies": [
+      {
+        "value": "@popperjs/core",
+        "files": [
+          "dist/umd/popper.min.js"
+        ]
+      }
+    ],
+    "files": [
+      "dist/css/bootstrap.min.css",
+      "dist/js/bootstrap.min.js"
+    ]
+  },
+  {
+    "name": "JS SweetAlert2 -",
+    "value": "sweetalert2",
+    "files": [
+      "dist/sweetalert2.all.min.js",
+      "dist/sweetalert2.min.css"
+    ]
+  },
+  {
+    "name": "JS jQuery UI -",
+    "value": "jquery-ui",
+    "dependencies": [
+      {
+        "value": "jquery",
+        "files": [
+          "dist/jquery.min.js"
+        ]
+      }
+    ],
+    "files": [
+      "dist/jquery-ui.min.js",
+      "themes/base/theme.min.css"
+    ]
+  },
+  {
+    "name": "JS DataTables -",
+    "value": "datatables.net",
+    "isDatatable": true,
+    "dependencies": [
+      {
+        "value": "jquery",
+        "files": [
+          "dist/jquery.min.js"
+        ]
+      }
+    ],
+    "files": [
+      "js/jquery.dataTables.min.js",
+      "css/jquery.dataTables.min.css"
+    ]
+  },
+  {
+    "name": "JS DataTables Buttons -",
+    "value": "datatables.net-buttons",
+    "isDatatable": true,
+    "dependencies": [
+      {
+        "value": "jquery",
+        "files": [
+          "dist/jquery.min.js"
+        ]
+      },
+      {
+        "value": "datatables.net",
+        "isDatatable": true,
+        "files": [
+          "js/jquery.dataTables.min.js",
+          "css/jquery.dataTables.min.css"
+        ]
+      },
+      {
+        "value": "jszip",
+        "files": [
+          "dist/jszip.min.js"
+        ]
+      },
+      {
+        "value": "pdfmake",
+        "files": [
+          "build/pdfmake.min.js",
+          "build/vfs_fonts.js"
+        ]
+      }
+    ],
+    "files": [
+      "js/dataTables.buttons.min.js",
+      "js/dataTables.bootstrap5.min.js",
+      "css/buttons.dataTables.min.css",
+      "js/buttons.html5.min.js"
+    ]
+  },
+  {
+    "name": "JS DataTables Select -",
+    "value": "datatables.net-select",
+    "isDatatable": true,
+    "dependencies": [
+      {
+        "value": "jquery",
+        "files": [
+          "dist/jquery.min.js"
+        ]
+      },
+      {
+        "value": "datatables.net",
+        "isDatatable": true,
+        "files": [
+          "js/jquery.dataTables.min.js",
+          "css/jquery.dataTables.min.css"
+        ]
+      }
+    ],
+    "files": [
+      "js/dataTables.select.min.js",
+      "css/select.dataTables.min.css"
+    ]
+  }
+]
