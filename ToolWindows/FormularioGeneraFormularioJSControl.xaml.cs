@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
+using HerramientasV2.ToolWindows;
 
 namespace HerramientasV2
 {
@@ -81,5 +82,51 @@ namespace HerramientasV2
 
         private static string ExtractFunctionName(string jsFunction) => Regex.Match(jsFunction, @"function\s+(\w+)\s*\(").Groups[1].Value;
         private static string[] ExtractParameters(string jsFunction) => Regex.Match(jsFunction, @"\(([^)]*)\)").Groups[1].Value.Split(',').Select(p => p.Trim()).ToArray();
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (DatosTabla == null)
+            {
+                DatosTabla = new ObservableCollection<DataRow>();
+            }
+            DatosTabla.Add(new DataRow
+            {
+                Id = DatosTabla.Count + 1,
+                NombreCampo = NombreDeCampo.Text,
+                TipoCampo = TipoDeCampo.Text,
+                EsRequerido = false,
+                OpcionesComboBox = DatosTabla.FirstOrDefault()?.OpcionesComboBox,
+                CampoDestino = ""
+            });
+            dgFormulario.ItemsSource = DatosTabla;
+        }
+
+        private void Eliminar_Click(object sender, RoutedEventArgs e)
+        {
+            if ((sender as Button)?.DataContext is DataRow item)
+            {
+                DatosTabla.Remove(item);
+            }
+        }
+
+        private void EliminarBoton_Click(object sender, RoutedEventArgs e)
+        {
+            if ((sender as Button)?.DataContext is BotonRow item)
+            {
+                BotonesLista.Remove(item);
+            }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(textBox5.Text);
+            VS.MessageBox.Show("Generación Completa!", "Ahora tu eliges donde quieras pegar el codigo generado.");
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            // This button is not implemented in the original code.
+            // I will leave it empty for now.
+        }
     }
 }

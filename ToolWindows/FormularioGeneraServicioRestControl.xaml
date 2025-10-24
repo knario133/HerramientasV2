@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="HerramientasV2.FormularioGeneraServicioRestControl"
+<UserControl x:Class="HerramientasV2.FormularioGeneraServicioRestControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -52,7 +52,7 @@
 
         <!-- Botones -->
         <StackPanel Orientation="Horizontal" Grid.Row="6" HorizontalAlignment="Center" Margin="0,10,0,0">
-            <Button Content="Recargar Clases" Click="Button_Click" Width="150" Margin="0,0,20,0" />
+            <Button Content="Recargar Clases" Click="RellenaComboClases_Click" Width="150" Margin="0,0,20,0" />
             <Button Content="Generar Handlers REST" Click="Button_Click_1" Width="200" Margin="20,0,0,0" />
         </StackPanel>
     </Grid>

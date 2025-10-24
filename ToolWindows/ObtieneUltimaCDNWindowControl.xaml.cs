@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using Microsoft.VisualStudio.Shell.Interop;
 
 namespace HerramientasV2
 {

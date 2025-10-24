@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="HerramientasV2.FormularioGeneraFormularioJSControl"
+<UserControl x:Class="HerramientasV2.FormularioGeneraFormularioJSControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -82,7 +82,7 @@
 
             </ComboBox>
             <CheckBox Content="ReadOnly" VerticalAlignment="Center" Margin="5"/>
-            <Button Content="Agregar Campo" Click="Button_Click"/>
+            <Button Content="Agregar Campo" Click="Button_Click" />
 
         </StackPanel>
         <GroupBox  Grid.Row="3" Header="Campos Formulario"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
@@ -96,7 +96,7 @@
                             <DataGridTemplateColumn Header="Eliminar">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Button Content="Eliminar" Click="Eliminar_Click"/>
+                                        <Button Content="Eliminar" Click="Eliminar_Click" />
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
@@ -206,7 +206,7 @@
                             <DataGridTemplateColumn Header="Eliminar">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Button Content="Eliminar"  Click="EliminarBoton_Click"/>
+                                        <Button Content="Eliminar" Click="EliminarBoton_Click" />
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
@@ -272,7 +272,7 @@
         <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Content="Generar Código" Margin="5" Click="Button_Click_1" />
             <Button Content="Generar Solo Código de Boton" Margin="5" Click="Button_Click_3" />
-            <Button Content="Copiar Código" Margin="5" Click="Button_Click_2"/>
+            <Button Content="Copiar Código" Margin="5" Click="Button_Click_2" />
         </StackPanel>
 
     </Grid>
