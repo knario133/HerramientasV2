@@ -54,6 +54,7 @@
     <Compile Include="Commands\GeneraMetodosEnLinq.cs" />
     <Compile Include="Commands\GeneraServicioRest.cs" />
     <Compile Include="Commands\ObtieneUltimaCDN.cs" />
+    <Compile Include="Services\SolutionExplorerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HerramientasV2Package.cs" />
     <Compile Include="source.extension.cs">
