@@ -1,20 +1,19 @@
 {
   "format": 1,
   "restore": {
-    "C:\\JFX\\HerramientasV2\\HerramientasV2.csproj": {}
+    "C:\\Users\\Frank\\Documents\\GitHub\\HerramientasV2\\HerramientasV2.csproj": {}
   },
   "projects": {
-    "C:\\JFX\\HerramientasV2\\HerramientasV2.csproj": {
+    "C:\\Users\\Frank\\Documents\\GitHub\\HerramientasV2\\HerramientasV2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\JFX\\HerramientasV2\\HerramientasV2.csproj",
+        "projectUniqueName": "C:\\Users\\Frank\\Documents\\GitHub\\HerramientasV2\\HerramientasV2.csproj",
         "projectName": "HerramientasJFX",
-        "projectPath": "C:\\JFX\\HerramientasV2\\HerramientasV2.csproj",
+        "projectPath": "C:\\Users\\Frank\\Documents\\GitHub\\HerramientasV2\\HerramientasV2.csproj",
         "packagesPath": "C:\\Users\\Frank\\.nuget\\packages\\",
-        "outputPath": "C:\\JFX\\HerramientasV2\\obj\\",
+        "outputPath": "C:\\Users\\Frank\\Documents\\GitHub\\HerramientasV2\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
-        "UsingMicrosoftNETSdk": false,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
@@ -34,11 +33,6 @@
           "net48": {
             "projectReferences": {}
           }
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -88,8 +82,7 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[17.12.2069, )",
-              "generatePathProperty": true
+              "version": "[17.12.2069, )"
             },
             "Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime": {
               "target": "Package",
@@ -99,25 +92,15 @@
               "target": "Package",
               "version": "[4.12.0, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "System.Xml.XDocument": {
               "target": "Package",
               "version": "[4.3.0, )"
             }
           }
-        }
-      },
-      "runtimes": {
-        "win": {
-          "#import": []
-        },
-        "win-arm64": {
-          "#import": []
-        },
-        "win-x64": {
-          "#import": []
-        },
-        "win-x86": {
-          "#import": []
         }
       }
     }

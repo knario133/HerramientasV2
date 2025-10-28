@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DMq2Yx7dS5Q=",
+  "dgSpecHash": "EatOPhBZ6H3EeN7kM8EE+/gb39V47GCxKgMlIh5hh5xIwBBxO4bZGPj0BF8EyHsyDIbgj1iSPS5tmt8x0OztEA==",
   "success": true,
-  "projectFilePath": "C:\\JFX\\HerramientasV2\\HerramientasV2.csproj",
+  "projectFilePath": "C:\\Users\\Frank\\Documents\\GitHub\\HerramientasV2\\HerramientasV2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Frank\\.nuget\\packages\\community.visualstudio.toolkit.17\\17.0.527\\community.visualstudio.toolkit.17.17.0.527.nupkg.sha512",
     "C:\\Users\\Frank\\.nuget\\packages\\community.visualstudio.toolkit.analyzers\\1.0.527\\community.visualstudio.toolkit.analyzers.1.0.527.nupkg.sha512",
@@ -126,9 +126,6 @@
     "C:\\Users\\Frank\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Frank\\.nuget\\packages\\nerdbank.streams\\2.6.81\\nerdbank.streams.2.6.81.nupkg.sha512",
     "C:\\Users\\Frank\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
-    "C:\\Users\\Frank\\.nuget\\packages\\runtime.any.system.io\\4.3.0\\runtime.any.system.io.4.3.0.nupkg.sha512",
-    "C:\\Users\\Frank\\.nuget\\packages\\runtime.any.system.runtime\\4.3.0\\runtime.any.system.runtime.4.3.0.nupkg.sha512",
-    "C:\\Users\\Frank\\.nuget\\packages\\runtime.win.microsoft.win32.primitives\\4.3.0\\runtime.win.microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Frank\\.nuget\\packages\\stdole\\17.0.31902.203\\stdole.17.0.31902.203.nupkg.sha512",
     "C:\\Users\\Frank\\.nuget\\packages\\streamjsonrpc\\2.8.28\\streamjsonrpc.2.8.28.nupkg.sha512",
     "C:\\Users\\Frank\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
