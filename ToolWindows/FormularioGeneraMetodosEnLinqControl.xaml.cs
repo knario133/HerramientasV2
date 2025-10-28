@@ -8,7 +8,6 @@ using System.Windows;
 using System.Windows.Controls;
 using Community.VisualStudio.Toolkit;
 using HerramientasV2.Services;
-using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.VisualStudio.LanguageServices;
 using Microsoft.VisualStudio.Shell;

@@ -30,7 +30,7 @@ namespace HerramientasV2
             catch { }
         }
 
-        private async void LinqDisponibles_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void LinqDisponibles_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             if (e.AddedItems.Count == 0) return;
 
