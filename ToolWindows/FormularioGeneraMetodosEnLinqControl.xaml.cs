@@ -115,7 +115,7 @@ namespace HerramientasV2
             }
         }
 
-        private async void LinqDisponibles_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void LinqDisponibles_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             if (LinqDisponibles.SelectedItem is ProjectFileEntry entry)
             {

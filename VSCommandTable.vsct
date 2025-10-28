@@ -12,8 +12,8 @@
 		<Groups>
 			<!-- Define el grupo en la barra de menús principal -->
                         <Group guid="HerramientasV2" id="MyMenuGroup" priority="0x0600">
-                                <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_EXTENSIONS" />
-			</Group>
+                                <Parent guid="VSMainMenu" id="Extensions" />
+                        </Group>
 		</Groups>
 		<!--This section defines the elements the user can interact with, like a menu command or a button
         or combo box in a toolbar. -->
